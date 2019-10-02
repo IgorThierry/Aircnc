@@ -1,11 +1,15 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const routes = require('./routes');
 
 const app = express();
 
-// GET, POST, PUT, DELETE
+mongoose.connect('mongodb+srv://omnistack:pspdmc123@omnistack-9pkeq.mongodb.net/dbteste?retryWrites=true&w=majority',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
-app.get('/', (req, res)=>{
-    return res.json({message:"Hello Igor"});
-});
+app.use(express.json());
+app.use(routes);
 
 app.listen(3333);
