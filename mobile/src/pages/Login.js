@@ -21,8 +21,6 @@ export default function Login({ navigation }) {
 
     async function handleSubmit() {
 
-        console.log(email, techs)
-
         const response = await api.post('/sessions', {
             email
         })
