@@ -75,8 +75,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginBottom: 15
   },
-  bold: { fontWeight: "bold" },
-  list: { paddingHorizontal: 20 },
+  bold: {
+    fontWeight: "bold"
+  },
+  list: {
+    paddingHorizontal: 20,
+    marginRight: 5
+  },
   listItem: {
     marginRight: 15,
     marginBottom: 5
