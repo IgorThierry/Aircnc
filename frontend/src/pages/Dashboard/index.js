@@ -37,16 +37,17 @@ export default function Dashboard() {
     loadSpots();
   }, []);
 
-  async function handleAccept(id){
+  async function handleAccept(id) {
     await api.post(`/bookings/${id}/approvals`);
 
-    setRequests(requests.filter(request=> request._id != id));
+    setRequests(requests.filter(request => request._id != id));
   }
 
-  async function handleReject(id){
+  async function handleReject(id) {
     await api.post(`/bookings/${id}/rejections`);
 
-    setRequests(requests.filter(request=> request._id != id));
+    // eslint-disable-next-line
+    setRequests(requests.filter(request => request._id != id));
   }
 
   return (
@@ -59,8 +60,18 @@ export default function Dashboard() {
               em <strong>{request.spot.company}</strong> para a data:
               <strong>{request.date}</strong>
             </p>
-            <button onClick={()=>handleAccept(request._id)} className="accept">ACEITAR</button>
-            <button onClick={()=>handleReject(request._id)} className="reject">REJEITAR</button>
+            <button
+              onClick={() => handleAccept(request._id)}
+              className="accept"
+            >
+              ACEITAR
+            </button>
+            <button
+              onClick={() => handleReject(request._id)}
+              className="reject"
+            >
+              REJEITAR
+            </button>
           </li>
         ))}
       </ul>
