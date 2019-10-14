@@ -12,7 +12,7 @@ const server = http.Server(app);
 const io = socketio(server);
 
 mongoose.connect(
-  "mongodb+srv://omnistack:pspdmc123@omnistack-9pkeq.mongodb.net/dbteste?retryWrites=true&w=majority",
+  "mongodb+srv://BANCO:SENHA@omnistack-9pkeq.mongodb.net/dbteste?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
